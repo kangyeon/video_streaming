@@ -1,10 +1,5 @@
 * {
   font-family: Helvetica;
-<<<<<<< HEAD
-  font-weight: 400;
-  font-size: 16px;
-=======
->>>>>>> daehee
   color: #bdc3c7;
 }
 
@@ -14,11 +9,7 @@ body {
 
 .container {
   max-width: 200px;
-<<<<<<< HEAD
-  margin: 20px auto;
-=======
   margin: 10px auto;
->>>>>>> daehee
 }
 
 h2 {
@@ -40,11 +31,7 @@ a:hover {
 
 .form {
   width: 100%;
-<<<<<<< HEAD
-  background-color: rgba(255,255,255,.2);
-=======
   background-color: #000000;
->>>>>>> daehee
   text-align: center;
   padding: 1.25em;
   border-radius: 5px;
@@ -91,22 +78,12 @@ input {
   border-bottom: 5px solid rgba(0,0,0,.12);
   line-height: 40px;
   color: white;
-<<<<<<< HEAD
-  background-color: #2980b9;
-=======
   background-color: #000000;
->>>>>>> daehee
   font-weight: 600;
 }
 
 
 .submit-btn:hover {
-<<<<<<< HEAD
-    background-color: #4768A4;
-    color: #fff;
-    border-color: #4768A4;
-}
-=======
     background-color: #000000;
     color: #fff;
     border-color: #000000;
@@ -748,4 +725,3 @@ a:hover {
 	width: 325px;
 	text-decoration: none;
 }
->>>>>>> daehee

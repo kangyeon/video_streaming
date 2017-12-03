@@ -7,12 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-<<<<<<< HEAD
-
-=======
 var inner = require('./routes/inner');
 var sign_up = require('./routes/sign_up');
->>>>>>> daehee
 var app = express();
 
 // view engine setup
@@ -29,12 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-<<<<<<< HEAD
-
-=======
 app.use('/inner', inner);
 app.use('/sign_up', sign_up);
->>>>>>> daehee
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
