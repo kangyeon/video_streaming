@@ -30,13 +30,13 @@ exports.list = function(page, callback){
   var size = 10; //글의 개수
   var begin = (page - 1) * size; //시작 글
   pool.getConnection(function(err, conn){
-    
+
     if(err) {callback(err); return;}
     conn.query('select count(*) cnt from board', [], function(err, rows){
-    
+
       if(err) {conn.release(); callback(err); return; }
       console.log('rows=', rows);
-    
+
       var cnt = rows[0].cnt; //총 개수를 얻을 수 있음
       var totalPage = Math.ceil(cnt / size);
       var pageSize = 10;
@@ -46,7 +46,7 @@ exports.list = function(page, callback){
       if(endPage > totalPage){ // 20 > 15
         endPage = totalPage; // 15
       }
-     
+
       var max = cnt -((page - 1) * size);
       conn.query("select num, title, writer, content, pwd, hit, DATE_FORMAT(regdate, '%Y-%m-%d %H:%i:%s') regdate from board order by num desc limit ?,?",
           [begin, size], function(err,rows){
