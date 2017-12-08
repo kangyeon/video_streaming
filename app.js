@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var inner = require('./routes/inner');
 var sign_up = require('./routes/sign_up');
+var videolist = require('./routes/videolist');
 var app = express();
 
 // view engine setup
@@ -27,7 +28,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/inner', inner);
 app.use('/sign_up', sign_up);
-
+app.use('/videolist', videolist);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -1,0 +1,11 @@
+
+.container {
+
+  background-image: url(../images/indeximage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  height: 100%;
+}
