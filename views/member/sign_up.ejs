@@ -11,8 +11,9 @@
 		<link rel="stylesheet" href="/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" href="#"/>
-		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script	src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/member/signUp.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -47,39 +48,38 @@
 			</div>
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4">
-					<div class="input-group">
-			      <input class="form-control" type="text" placeholder="아이디를 입력해주세요.">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">중복확인</button>
+			      <input class="form-control input-form-id" type="text" placeholder="아이디를 입력해주세요.">
+			      <span class="confirm-repetition">
 			      </span>
-			    </div>
 				</div>
 			</div>
 			<div class="row">
 					<div class="col-md-offset-4 col-md-4" style="margin-top: 16px;">
-						<div class="input-group">
-						<input class = "form-control"	 type="text" placeholder="닉네임을 입력해주세요.">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="button">중복확인</button>
-						</span>
+						<input class = "form-control input-form-nickname"	 type="text" placeholder="닉네임을 입력해주세요.">
+						<span class="confirm-repetition">
+			      </span>
 					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4" style="margin-top: 16px;">
+					<input class="form-control input-form-password" type="text" placeholder="비밀번호를 입력해주세요.">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4" style="margin-top: 16px;">
-					<input class="form-control" type="text" placeholder="비밀번호를 입력해주세요.">
+					<input class="form-control input-form-password" type="text" placeholder="비밀번호를 확인해주세요.">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4" style="margin-top: 16px;">
-					<input class="form-control" type="text" placeholder="비밀번호를 확인해주세요.">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-4 col-md-4" style="margin-top: 16px;">
-					<button type="button" class="btn btn-Primary" style="width: 100%;">회원가입</button>
+					<button type="button" class="btn btn-Primary sign-up-btn" style="width: 100%;">회원가입</button>
 				</div>
 			</div>
 		</div>
 	</body>
 </html>
+<script type="text/javascript">
+ $(document).ready(function(){
+	 	signUp.bind();
+ });
+</script>
