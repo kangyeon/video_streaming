@@ -22,6 +22,7 @@ router.post('/login', function(req, res, next) {
             req.session.login = true;
             req.session.memId = doc['id'];
             req.session.memNm = doc['nickname'];
+            req.session.user_sno = doc['sno'];
         }
         res.json(doc);
     });

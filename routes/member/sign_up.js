@@ -2,11 +2,33 @@ var express = require('express');
 var router = express.Router();
 var memberModel = require('../../models/memberModel');
 var passwordHash = require('password-hash');
-var session = require('express-session')
+var fs =require('fs')
+var path =  require('path');
+var __video_repository_path = __dirname+"/../../video_repository/";
+
+__create_folder = function(id) {
+    var directory_name = id;
+    var directory_path = __video_repository_path+directory_name;
+    if (!fs.existsSync(directory_path)) {
+        fs.mkdir(directory_path, 0777, function(err){
+            if(err){
+                return false;
+            }else{
+                console.log('create newDir');
+                return true;
+            }
+	    });
+    }
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-console.log(req.session);
+
+  if (req.session.login) {
+    res.send('<script>alert("세션 정보가 있습니다."); location.href="/"</script>');
+  }
   res.render('member/sign_up');
+
 });
 
 router.post('/confirm_repetition', function(req, res, next){
@@ -51,6 +73,7 @@ router.post('/join', function(req, res, next){
   }
   memberModel.join(data, function(result, doc){
      if (result) {
+        __create_folder(data['id']);
         res.json(
             {
                 'result' : true,
