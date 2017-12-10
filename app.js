@@ -12,6 +12,9 @@ var index = require('./routes/index');
 var signUp = require('./routes/member/sign_up');
 // var signUpProcess = require('./routes/sign_up/signUpProcess');
 var videolist = require('./routes/videolist');
+var inner = require('./routes/inner');
+var myPage = require('./routes/myPage');
+
 var app = express();
 
 // view engine setup
@@ -39,6 +42,9 @@ app.use('/member', signUp);
 // app.use('/sign_up/signUpProcess', signUpProcess);
 app.use('/videolist', videolist);
 // catch 404 and forward to error handler
+app.use('/inner', inner);
+app.use('/myPage', myPage);
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
