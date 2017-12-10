@@ -40,6 +40,26 @@ var signUp = (function() {
     post_process(post);
   }
 
+  var __join = function(data) {
+
+      var post = function() {
+        $.post("/member/join", data , function(data) {
+            if (data['result']) {
+                alert(data['message']);
+                location.href = "/";
+            } else {
+                alert(data['message']);
+                location.reload();
+            }
+        });
+      }
+
+      var post_process = function(callback){
+            callback();
+      }
+      post_process(post);
+  }
+
   var bind = function(){
     $('.input-form-id').keyup(function(e){
       var idObj = $(e.target);
@@ -91,6 +111,12 @@ var signUp = (function() {
         nicknameObj.focus();
         return false;
       }
+       var data = {
+        'id' : idObj.val(),
+        'password' : password.val(),
+        'nickname' : nicknameObj.val()
+       };
+      __join(data);
     });
   }
 
