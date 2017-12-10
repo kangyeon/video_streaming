@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.post('/login', function(req, res, next) {
     var data = req.body;
     memberModel.login(data, function(result, doc) {
- console.log(result);
+
         if (result) {
             req.session.login = true;
             req.session.memId = doc['id'];
