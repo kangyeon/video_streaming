@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="e7143774-4bf0-46bc-9212-34088bfe659a" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/www" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/body-parser/HISTORY.md" afterPath="" />
@@ -622,6 +623,9 @@
 =======
     <list default="true" id="e7143774-4bf0-46bc-9212-34088bfe659a" name="Default" comment="" />
 >>>>>>> Stashed changes
+=======
+    <list default="true" id="e7143774-4bf0-46bc-9212-34088bfe659a" name="Default" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1004,8 +1008,12 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <frame x="-1721" y="77" width="1440" height="838" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="-1372" y="54" width="1440" height="838" extended-state="0" />
+>>>>>>> Stashed changes
 =======
     <frame x="-1372" y="54" width="1440" height="838" extended-state="0" />
 >>>>>>> Stashed changes
