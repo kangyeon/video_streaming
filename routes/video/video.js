@@ -26,7 +26,7 @@ router.post('/upload', function(req, res, next){
            var file_arr;
            var size;
            var date = new Date();
-           var current_date = date.getFullYear()+''+(date.getMonth()+1)+''+date.getDate();
+           var current_date = date.getFullYear()+''+(date.getMonth()+1)+''+date.getDate()+''+date.getHours()+''+date.getSeconds()+''+date.getMilliseconds();
            if (part.filename) {
                  file_arr = part.filename.split('.')
                  filename = req.session.memId+file_arr[0]+current_date+"."+file_arr[1];

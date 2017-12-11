@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-
+        <script type="text/javascript" src="/js/video/video.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -39,6 +39,7 @@
 		    </div>
 		  </div>
 		</nav>
+		<form class="form-inline video_upload" action="/video/upload" method="post" enctype="multipart/form-data">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4">
@@ -58,15 +59,31 @@
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
 					<div class="jumbotron text-center">
-					  <form class="form-inline video_upload" action="/video/upload" method="post" enctype="multipart/form-data">
+
 
 					     <div class="form-group">
-                            <input type="file" class="btn" name="video_file" id="BSbtninfo">
+                            <input  type="file" class="btn video-file" name="video_file" id="BSbtninfo">
                          </div>
-                         <input type="submit" class="btn" value="업로드 하기">
-					  </form>
+                         <input type="submit" class="btn video-upload-btn" value="업로드 하기">
+
 					</div>
+                    <div class="form-group">
+                        <label for="usr">Video name:</label>
+                            <input style="width:380px; margin-left : 20px;" maxlength="50" type="text" name="vedio_title" class="form-control vedio-title" id="usr">
+                            <span style="color : red;" class="word-count">0</span> / 50
+                    </div>
+                    <div style="margin-top : 30px;" class="form-group">
+                        <label for="comment">Description:</label>
+                            <textarea name="video_description"  style="width:380px; margin-left : 20px;" class="form-control" rows="5" id="comment"></textarea>
+                            <span style="color : red;" class="word-count">0</span> / 300
+                    </div>
 				</div>
 			</div>
+			</form>
 	</body>
 </html>
+<script type="text/javascript">
+ $(document).ready(function(){
+	 	video.bind();
+ });
+</script>
