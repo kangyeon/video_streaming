@@ -1,0 +1,11 @@
+.each_video {
+  margin-left : 430px;
+}
+.video-contents {
+  float : left;
+  margin-left : 600px;
+}
+
+.float-left {
+    float : left
+}

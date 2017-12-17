@@ -2,7 +2,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title><a href="/">동영상 스트리밍</a></title>
+		<title>DK TUBE</title>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -26,15 +26,18 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">동영상 스트리밍</a>
+		      <a class="navbar-brand" href="/">DK TUBE</a>
+
+		      <img style="margin-top:10px" width="150px;" height="30px" src="/images/header.png">
+
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> 홈</a></li>
 						<li><a href="/video"><span class="glyphicon glyphicon-upload"></span> 업로드</a></li>
-						<li><a href="videolist"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
+						<li><a href="/video/video_list/1"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
 						<% if(id) {%>
-						<li><a href="/member"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
+						<li><a href="/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
                         <% } else {%>
                         <li><a href="/member"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
                         <% } %>
@@ -57,7 +60,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-offset-8 col-md-3" style="margin-top: 10px;">
-							<input class="form-control input-form-pw" type="text" placeholder="비밀번호를 입력해주세요.">
+							<input class="form-control input-form-pw" type="password" placeholder="비밀번호를 입력해주세요.">
 						</div>
 					</div>
 					<div class="row">

@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var index = require('./routes/index');
-var signUp = require('./routes/member/sign_up');
+var member = require('./routes/member/member');
 var video = require('./routes/video/video');
-var videolist = require('./routes/videolist');
+
 //var inner = require('./routes/inner');
 //var myPage = require('./routes/myPage');
 
@@ -32,9 +32,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/member', signUp);
+app.use('/member', member);
 app.use('/video', video);
-app.use('/videolist', videolist);
+
 //app.use('/inner', inner);
 //app.use('/myPage', myPage);
 

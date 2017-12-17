@@ -1,0 +1,76 @@
+
+<!DOCTYPE>
+<html>
+	<head>
+		<title>동영상 스트리밍</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="/stylesheets/video_list.css" />
+        <link rel="stylesheet" href="/stylesheets/video.css" />
+        <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" />
+        <script src="http://vjs.zencdn.net/c/video.js"></script>
+
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/video/player.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+
+		      <a class="navbar-brand" href="/">DK TUBE</a>
+
+		      <img style="margin-top:10px" width="150px;" height="30px" src="/images/header.png">
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+						<li><a href="/"><span class="glyphicon glyphicon-home"></span> 홈</a></li>
+						<li><a href="/video/"><span class="glyphicon glyphicon-upload"></span> 업로드</a></li>
+						<li class="active"><a href="/video/video_list/1"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
+						<li><a href="/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
+
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+		<div class="container">
+            <div class="jumbotron">
+            <h1>제목 : <%= data['title'] %></h1>
+            <p>설명 : <%= data['description'] %></p>
+            <p>비디오 파일 명 : <%= data['video_origin_name'] %></p>
+            </div>
+            <p>게시자 : <%= data['id'] %></p>
+            <p>게시일 : <%= data['reg_date'] %></p>
+            <p>재생수 : <span id="run-count"><%= data['count'] %></span></p>
+        </div>
+
+
+      <footer class="container-fluid bg-4 text-center video_list_footer" >
+   <div class="each_video" content="<%= data['sno'] %>">
+          <video width="640" height="360" controls="controls" class="video-js vjs-default-skin" data-setup="{}">
+                <source src="<%= path %><%= data['video_name'] %>" type="video/mp4" />
+          </video>
+      </div>
+    <div>
+    </div>
+    </footer>
+	</body>
+</html>
+<script type="text/javascript">
+ $(document).ready(function(){
+	 	player.bind();
+ });
+</script>

@@ -46,7 +46,8 @@ exports.login = function(data, callback) {
                       {
                         'message' : '로그인 되셨습니다.',
                         'id' : result[0]['id'],
-                        'nickname' : result[0]['nickname']
+                        'nickname' : result[0]['nickname'],
+                        'sno' : result[0]['sno']
                       }
                   );
                } else {
@@ -57,6 +58,19 @@ exports.login = function(data, callback) {
             }
         } else {
                callback(false, {'message' : "조회된 아이디가 업습니다"});
+        }
+    });
+}
+
+exports.getName = function(data, callback) {
+    var query = 'select id from user where sno = "'+data['sno']+'"';
+    db.query(query, function(err, result){
+        if (result.length) {
+            if (!err) {
+                callback( true,result);
+            } else {
+               callback(false, err);
+            }
         }
     });
 }

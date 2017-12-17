@@ -26,14 +26,17 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">동영상 스트리밍</a>
+
+		      <a class="navbar-brand" href="/">DK TUBE</a>
+
+		      <img style="margin-top:10px" width="150px;" height="30px" src="/images/header.png">
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
 						<li><a href="/"><span class="glyphicon glyphicon-home"></span> 홈</a></li>
-						<li class="active"><a href="inner"><span class="glyphicon glyphicon-upload"></span> 업로드</a></li>
-						<li><a href="videolist"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
-						<li><a href="/member"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+						<li class="active"><a href="/video/"><span class="glyphicon glyphicon-upload"></span> 업로드</a></li>
+                        <li><a href="/video/video_list/1"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
+						<li><a href="/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
 
 		      </ul>
 		    </div>
@@ -69,12 +72,12 @@
 					</div>
                     <div class="form-group">
                         <label for="usr">Video name:</label>
-                            <input style="width:380px; margin-left : 20px;" maxlength="50" type="text" name="vedio_title" class="form-control vedio-title" id="usr">
+                            <input style="width:380px; margin-left : 20px;" maxlength="50" type="text" name="title" class="form-control vedio-title" id="usr">
                             <span style="color : red;" class="word-count">0</span> / 50
                     </div>
                     <div style="margin-top : 30px;" class="form-group">
                         <label for="comment">Description:</label>
-                            <textarea name="video_description"  style="width:380px; margin-left : 20px;" class="form-control" rows="5" id="comment"></textarea>
+                            <textarea name="description"  style="width:380px; margin-left : 20px;" class="form-control" rows="5" id="comment"></textarea>
                             <span style="color : red;" class="word-count">0</span> / 300
                     </div>
 				</div>

@@ -1,0 +1,105 @@
+
+<!DOCTYPE>
+<html>
+	<head>
+		<title>동영상 스트리밍</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="/stylesheets/video_list.css" />
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+
+		      <a class="navbar-brand" href="/">DK TUBE</a>
+
+		      <img style="margin-top:10px" width="150px;" height="30px" src="/images/header.png">
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+						<li><a href="/"><span class="glyphicon glyphicon-home"></span> 홈</a></li>
+						<li><a href="/video/"><span class="glyphicon glyphicon-upload"></span> 업로드</a></li>
+						<li class="active"><a href="/video/video_list/1"><span class="glyphicon glyphicon-film"></span> 비디오</a></li>
+						<li><a href="/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
+
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<div class="container">
+        <p> </p>
+        <h1>영상 목록</h1>
+        <p></p>
+
+        </div>
+
+
+      <footer class="container-fluid bg-4 text-center video_list_footer" >
+        <ul class="list-unstyled video-list-thumbs row">
+            <% for(var i=0; i<row1.length; i++) { %>
+            <li class="col-lg-3 col-sm-4 col-xs-6">
+                <a href="/video/player/<%= row1[i]['sno'] %>/<%= row1[i]['user_sno'] %>" title="<%= row1[i]['title'] %>">
+                    <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
+                    <h2><%= row1[i]['description'] %></h2>
+                    <h9> 게시일 : <%= row1[i]['reg_date'] %></h9>
+                    <span class="glyphicon glyphicon-play-circle"></span>
+                    <span class="duration">게시자 : <%= row1[i]['id'] %></span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+        <ul class="list-unstyled video-list-thumbs row">
+            <% for(var i=0; i<row2.length; i++) { %>
+            <li class="col-lg-3 col-sm-4 col-xs-6">
+                <a href="/video/player/<%= row2[i]['sno'] %>/<%= row2[i]['user_sno'] %>" title="<%= row2[i]['title'] %>">
+                    <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
+                    <h2><%= row2[i]['description'] %></h2>
+                    <h9>게시일 : <%= row2[i]['reg_date'] %></h9>
+                    <span class="glyphicon glyphicon-play-circle"></span>
+                    <span class="duration">게시자 : <%= row2[i]['id'] %></span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+        <ul class="list-unstyled video-list-thumbs row">
+            <% for(var i=0; i<row3.length; i++) { %>
+            <li class="col-lg-3 col-sm-4 col-xs-6">
+                <a href="/video/player/<%= row3[i]['sno'] %>/<%= row3[i]['user_sno'] %>" title="<%= row3[i]['title'] %>">
+                    <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
+                    <h2><%= row3[i]['description'] %></h2>
+                    <h9>게시일 : <%= row3[i]['reg_date'] %></h9>
+                    <span class="glyphicon glyphicon-play-circle"></span>
+                    <span class="duration">게시자 : <%= row3[i]['id'] %></span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+        <div class="container">
+          <ul class="pagination">
+            <% for(var i = 0; i< Math.ceil(count/12); i++) { %>
+                <% if (i+1 == page) { %>
+                    <li class="active"><a href="/video/video_list/<%= i+1 %>"><%= i+1 %></a></li>
+                <% } else { %>
+                    <li><a href="/video/video_list/<%= i+1 %>"><%= i+1 %></a></li>
+                <% } %>
+            <% } %>
+          </ul>
+        </div>
+    </footer>
+
+	</body>
+</html>
